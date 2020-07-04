@@ -1,0 +1,138 @@
+:root {
+  --primary-Red: hsl(0, 78%, 62%);
+  --primary-Cyan: hsl(180, 62%, 55%);
+  --primary-Orange: hsl(34, 97%, 64%);
+  --primary-Blue: hsl(212, 86%, 64%);
+
+  --neutral-very-dark-blue: hsl(234, 12%, 34%);
+  --neutral-grayish-blue: hsl(229, 6%, 66%);
+  --neutral-very-light-gray: hsl(0, 0%, 98%);
+}
+* {
+  font-size: 15px;
+  padding: 0px;
+  margin: 0px;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+html,
+body,
+.app {
+  width: 100vw;
+  height: 100vh;
+}
+body {
+  background-color: var(--neutral-very-light-gray);
+}
+.app {
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+header {
+  display: block;
+  margin: 40px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 1.95rem;
+  font-weight: 400;
+  color: var(--neutral-grayish-blue);
+}
+
+header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--neutral-very-dark-blue);
+}
+
+header p {
+  color: var(--neutral-grayish-blue);
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cards {
+  margin: 0px 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 22px 22px;
+  grid-template-areas:
+    "c r b "
+    "c y b";
+
+  align-items: center;
+}
+.card {
+  max-width: 300px;
+  min-height: 200px;
+}
+.cards .card {
+  background-color: var(--neutral-very-light-gray);
+  border-radius: 5px;
+  box-shadow: 0px 11px 22px -10px #00000085;
+
+  padding: 20px;
+  text-align: left;
+}
+.cards .card p {
+  font-size: 0.7rem;
+  color: var(--neutral-grayish-blue);
+}
+.cards .card-cyan {
+  grid-area: c;
+  border-top: solid 3px var(--primary-Cyan);
+}
+.cards .card-red {
+  grid-area: r;
+  border-top: solid 3px var(--primary-Red);
+}
+.cards .card-blue {
+  grid-area: b;
+  border-top: solid 3px var(--primary-Blue);
+}
+.cards .card-yellow {
+  grid-area: y;
+  border-top: solid 3px var(--primary-Orange);
+}
+.cards .card span {
+  width: 100%;
+  text-align: right;
+  display: block;
+}
+.cards .card img {
+  margin: 40px 0 0 0;
+  text-align: center;
+  width: 50px;
+}
+
+@media only screen and (max-width: 414px) {
+  .app {
+    display: block;
+  }
+  .cards {
+    margin: 0px 25px 25px 25px;
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-gap: 22px 22px;
+    grid-template-areas:
+      "c"
+      "r"
+      "y"
+      "b";
+  }
+}
